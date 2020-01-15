@@ -45,6 +45,10 @@ showMatchedFeatures(original,distorted,matchedOriginal,matchedDistorted);
 [tform, inlierDistorted, inlierOriginal] = estimateGeometricTransform(matchedDistorted, matchedOriginal, 'similarity');
 legend('ptsOriginal','ptsDistorted');
 
+figure;
+showMatchedFeatures(original,distorted,inlierOriginal,inlierDistorted);
+
+
 Tinv = tform.invert.T;
 
 ss = Tinv(2,1);
